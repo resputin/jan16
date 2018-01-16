@@ -64,3 +64,15 @@
 
 // warning1("Here");
 // warning1("Here");
+
+
+
+const turtleArray=[[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+function turtlemoves(arr){
+  const positiveMoves=arr.filter(move=>move[0]>=0 && move[1]>=0);
+  // console.log(positiveMoves);
+  const turtleSteps=positiveMoves.map(move=>move[0]+move[1]);
+  // console.log(turtleSteps);
+  turtleSteps.forEach(move=>console.log(move));
+}
+turtlemoves(turtleArray);
