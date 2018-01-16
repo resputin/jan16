@@ -57,7 +57,7 @@ function hazardWarningCreator(typeOfWarning){
   return location => {
     warningCounter++;
     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-    
+    // console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${warningCounter === 1 ? 'time' : 'times' today!`)
     if (warningCounter===1){
       console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
     }
@@ -103,20 +103,5 @@ function secretMessage(str){
     }
   }, "");
 }
+
 console.log(secretMessage(secretWords));
-
-
-//  let wordArray = secretWords.split(" ");
-
-//  console.log(wordArray.reduce((total, currentValue) => {
-//      if (currentValue.length === 3) {
-//        return total + " ";
-//      } else {
-//        return total + currentValue[currentValue.length - 1].toUpperCase();
-//      }
-//    }, ""));
-
-
-// function() {
-//   wordArray.reduce("NO NEED TO SHOUT");
-// }
