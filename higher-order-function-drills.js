@@ -27,7 +27,7 @@
 //     return name[0] === 'R';
 // });
 
-// console.log(filteredNames) // => ['Rich', 'Ray']
+// //console.log(filteredNames) // => ['Rich', 'Ray']
 // // <---- DO NOT EDIT BETWEEN THESE LINES
 
 // // TASK: DEFINE YOUR FILTER FUNCTION BELOW:
@@ -45,25 +45,32 @@
 //   return word[0]==='R';
 // }
 
-// console.log(filter(myNames,checkFirstLetter));
+// // console.log(filter(myNames,checkFirstLetter));
+// console.log(myNames.filter(name=>name[0]==='R'));
 
 
-// function hazardWarningCreator(typeOfWarning){
-//   let warningCounter = 0;
+function hazardWarningCreator(typeOfWarning){
+  let warningCounter = 0;
 
-//   return function(location){
-//     warningCounter++;
-//     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-//     console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
-//   };
-// }
+  return function(location){
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    
+    if (warningCounter===1){
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
+    }
+    else {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`);
+    }
+  };
+}
 
-// const warning1 = hazardWarningCreator("Rocks on the road");
-// const warning2 = hazardWarningCreator("Icy roads");
-// const warning3 = hazardWarningCreator("Don't fall off the cliff");
+const warning1 = hazardWarningCreator("Rocks on the road");
+const warning2 = hazardWarningCreator("Icy roads");
+const warning3 = hazardWarningCreator("Don't fall off the cliff");
 
-// warning1("Here");
-// warning1("Here");
+warning1("Here");
+warning1("Here");
 
 
 
@@ -77,25 +84,25 @@
 // }
 // turtlemoves(turtleArray);
 
-let secretWords =
-  "noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest";
+// let secretWords =
+//   "noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest";
 
-function secretMessage(str){
-  let wordArray = str.split(" ");
-  // console.log(wordArray);
-  return wordArray.reduce(function(total, currentValue){
-    // console.log(currentValue);
-    if (currentValue.length === 3) {
-      return total + " ";
-    } else {
-      // console.log(total);
-      // console.log(total + currentValue[currentValue.length - 1].toUpperCase());
-      return total + currentValue[currentValue.length - 1].toUpperCase();
-      // 
-    }
-  }, "");
-}
-console.log(secretMessage(secretWords));
+// function secretMessage(str){
+//   let wordArray = str.split(" ");
+//   // console.log(wordArray);
+//   return wordArray.reduce(function(total, currentValue){
+//     // console.log(currentValue);
+//     if (currentValue.length === 3) {
+//       return total + " ";
+//     } else {
+//       // console.log(total);
+//       // console.log(total + currentValue[currentValue.length - 1].toUpperCase());
+//       return total + currentValue[currentValue.length - 1].toUpperCase();
+//       // 
+//     }
+//   }, "");
+// }
+// console.log(secretMessage(secretWords));
 
 
 //  let wordArray = secretWords.split(" ");
