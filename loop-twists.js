@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 // function max(arr){
 //   let currentMax = arr[0];
@@ -38,14 +38,8 @@
 //-------------------------------------------------------------
 
 function average(numbers) {
-  // initially we set total to the value of the
-  // first number.
   let total = 0;
-  // then we add each of the remaining numbers
-  // to total.
   numbers.forEach(element=>total+=element);
-  // then we return total divided by the length
-  // of our numbers array to get the average.
   console.log(total / numbers.length);
   return total / numbers.length;
 }
