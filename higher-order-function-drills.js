@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function repeat(fn, n) {
   for (let i = 0; i < n; i++) {
@@ -7,11 +7,11 @@ function repeat(fn, n) {
 }
 
 function hello() {
-  console.log("Hello World");
+  console.log('Hello World');
 }
 
 function goodbye() {
-  console.log("Goodbye World");
+  console.log('Goodbye World');
 }
 
 repeat(hello, 5);
@@ -21,11 +21,11 @@ repeat(goodbye, 5);
 // // Return only names that begin with 'R'
 
 // //-------------------------------------------------------------------
-const myNames = ["Rich", "Joe", "Bhaumik", "Ray"];
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 
 const filteredNames = filter(myNames, function(name) {
   // This is a "predicate function" - it's a function that only returns a boolean
-  return name[0] === "R";
+  return name[0] === 'R';
 });
 
 //console.log(filteredNames) // => ['Rich', 'Ray']
@@ -42,11 +42,11 @@ function filter(arr, fn) {
   return newArray;
 }
 function checkFirstLetter(word) {
-  return word[0] === "R";
+  return word[0] === 'R';
 }
 
 console.log(filter(myNames, checkFirstLetter));
-console.log(myNames.filter(name => name[0] === "R"));
+console.log(myNames.filter(name => name[0] === 'R'));
 
 function hazardWarningCreator(typeOfWarning) {
   let warningCounter = 0;
@@ -56,18 +56,18 @@ function hazardWarningCreator(typeOfWarning) {
     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
     console.log(
       `The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${
-        warningCounter === 1 ? "time" : "times"
+        warningCounter === 1 ? 'time' : 'times'
       } today!`
     );
   };
 }
 
-const warning1 = hazardWarningCreator("Rocks on the road");
-const warning2 = hazardWarningCreator("Icy roads");
-const warning3 = hazardWarningCreator("Don't fall off the cliff");
+const warning1 = hazardWarningCreator('Rocks on the road');
+const warning2 = hazardWarningCreator('Icy roads');
+const warning3 = hazardWarningCreator('Don\'t fall off the cliff');
 
-warning1("Here");
-warning1("Here");
+warning1('Here');
+warning1('Here');
 
 const turtleArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 function turtlemoves(arr) {
@@ -80,32 +80,32 @@ function turtlemoves(arr) {
 turtlemoves(turtleArray);
 
 let secretWords =
-  "noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest";
+  'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
 
 function secretMessage(str) {
-  let wordArray = str.split(" ");
+  let wordArray = str.split(' ');
   // console.log(wordArray);
   return wordArray.reduce(function(total, currentValue) {
     // console.log(currentValue);
     if (currentValue.length === 3) {
-      return total + " ";
+      return total + ' ';
     } else {
       // console.log(total);
       // console.log(total + currentValue[currentValue.length - 1].toUpperCase());
       return total + currentValue[currentValue.length - 1].toUpperCase();
       //
     }
-  }, "");
+  }, '');
 }
 
 console.log(secretMessage(secretWords));
 
 function secretMessageRefactor(str) {
-  return str.split(" ").reduce((total, current) => {
+  return str.split(' ').reduce((total, current) => {
     return current.length === 3
-      ? total + " "
+      ? total + ' '
       : total + current[current.length - 1].toUpperCase();
-  }, "");
+  }, '');
 }
 
 console.log(secretMessageRefactor(secretWords));
